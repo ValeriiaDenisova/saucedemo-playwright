@@ -8,9 +8,9 @@ export class LoginPage extends BasePage {
     readonly loginButton: Locator = this.page.locator("#login-button");
     readonly errorMessage: Locator = this.page.locator('[data-test="error"]');
 
-    async login(username: string, password: string) {
-        await this.fillUserName(username);
-        await this.fillPassword(password);
+    async login(user: { username: string, password: string }) {
+        await this.fillUserName(user.username);
+        await this.fillPassword(user.password);
         await this.clickLoginButton();
     }
 

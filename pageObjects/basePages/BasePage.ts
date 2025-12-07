@@ -19,8 +19,15 @@ export class BasePage {
     }
 
     async logout() {
-        this.clickBurgerMenu();
-        this.clickLogoutButton();
+        await this.clickBurgerMenu();
+        await this.clickLogoutButton();
+    }
+
+    async logoutIfPossible() {
+        if (await this.burgerMenu.isVisible({ timeout: 2000 })) {
+            await this.clickBurgerMenu();
+            await this.clickLogoutButton();
+        }
     }
 
     async clickBurgerMenu() {
