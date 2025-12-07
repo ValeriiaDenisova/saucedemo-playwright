@@ -32,6 +32,8 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  globalSetup: require.resolve('./global-setup'),
+
   /* Configure projects for major browsers */
   projects: [
     {
@@ -46,6 +48,15 @@ export default defineConfig({
       name: 'saucedemo without fixture',
       testDir: './tests/saucedemo/withoutFixture',
       use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+
+    {
+      name: 'conduit',
+      testDir: './tests/conduit',
+      use: {
+        storageState: 'storageState.json',
         ...devices['Desktop Chrome'],
       },
     },
