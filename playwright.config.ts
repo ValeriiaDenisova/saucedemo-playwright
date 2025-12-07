@@ -35,16 +35,16 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'withFixture',
-      testDir: './tests/withFixture',
+      name: 'saucedemo with fixture',
+      testDir: './tests/saucedemo/withFixture',
       use: {
         ...devices['Desktop Chrome'],
       },
     },
 
     {
-      name: 'withoutFixture',
-      testDir: './tests/withoutFixture',
+      name: 'saucedemo without fixture',
+      testDir: './tests/saucedemo/withoutFixture',
       use: {
         ...devices['Desktop Chrome'],
       },

@@ -1,9 +1,9 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../../pageObjects/LoginPage';
-import { InventoryPage } from '../../pageObjects/InventoryPage';
-import { CartPage } from '../../pageObjects/CartPage';
-import { CheckoutStepOnePage } from '../../pageObjects/CheckoutStepOnePage';
-import { CheckoutStepTwoPage } from '../../pageObjects/CheckoutStepTwoPage';
+import { LoginPage } from '../../../pageObjects/LoginPage';
+import { InventoryPage } from '../../../pageObjects/InventoryPage';
+import { CartPage } from '../../../pageObjects/CartPage';
+import { CheckoutStepOnePage } from '../../../pageObjects/CheckoutStepOnePage';
+import { CheckoutStepTwoPage } from '../../../pageObjects/CheckoutStepTwoPage';
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);

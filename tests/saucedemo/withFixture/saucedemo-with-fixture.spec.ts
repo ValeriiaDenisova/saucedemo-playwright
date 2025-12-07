@@ -1,14 +1,5 @@
-import { test } from "./../../fixtures/base-fixture";
-import { LoginPage } from '../../pageObjects/LoginPage';
-import { InventoryPage } from '../../pageObjects/InventoryPage';
-import { CartPage } from '../../pageObjects/CartPage';
-import { CheckoutStepOnePage } from '../../pageObjects/CheckoutStepOnePage';
-import { CheckoutStepTwoPage } from '../../pageObjects/CheckoutStepTwoPage';
+import { test } from "../../../fixtures/base-fixture";
 
-// test.beforeEach(async ({ page }) => {
-//   const loginPage = new LoginPage(page);
-//   await loginPage.navigate();
-// });
 
 test.describe('Positive tests with Fixture', () => {
   test.use({ username: "standard_user" });
@@ -46,11 +37,7 @@ test.describe('Positive tests with Fixture', () => {
   });
 
 
-  test('TC-4 Remove item from cart', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    const inventoryPage = new InventoryPage(page);
-
-    //  await loginPage.login('standard_user', 'secret_sauce');
+  test('TC-4 Remove item from cart', async ({ inventoryPage }) => {
     await inventoryPage.addToCartByTitle('Sauce Labs Backpack');
     await inventoryPage.removeFromCartByTitle('Sauce Labs Backpack');
 
@@ -61,9 +48,7 @@ test.describe('Positive tests with Fixture', () => {
 test.describe('Negative tests with Fixture', () => {
   test.use({ username: "invalid_user" });
 
-  test('TC-5 Unsuccessful Login test', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-
+  test('TC-5 Unsuccessful Login test', async ({ loginPage }) => {
     await loginPage.verifyErrorMessage('Epic sadface: Username and password do not match any user in this service');
   });
 });
