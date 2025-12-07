@@ -50,6 +50,14 @@ export default defineConfig({
       },
     },
 
+    {
+      name: 'zara',
+      testDir: './tests/zara',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+
     // {
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
