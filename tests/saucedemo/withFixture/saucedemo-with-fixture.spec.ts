@@ -1,8 +1,9 @@
 import { test } from "../../../fixtures/base-fixture";
+import { users } from './../../../testData';
 
 
 test.describe('Positive tests with Fixture', () => {
-  test.use({ username: "standard_user" });
+  test.use({ username: users.standard.username });
 
   test('TC-1 Successful Login test', async ({ inventoryPage }) => {
     await inventoryPage.verifyInventoryPageIsDisplayed();
@@ -14,7 +15,7 @@ test.describe('Positive tests with Fixture', () => {
 
     await inventoryPage.addToCartByTitle('Sauce Labs Backpack');
     await inventoryPage.verifyNumberOfAddedItems(1);
-
+    ``
     await inventoryPage.clickCartButton();
     await inventoryPage.verifyNumberOfAddedItems(1);
   });
@@ -46,7 +47,7 @@ test.describe('Positive tests with Fixture', () => {
 
 
 test.describe('Negative tests with Fixture', () => {
-  test.use({ username: "invalid_user" });
+  test.use({ username: users.invalid.username });
 
   test('TC-5 Unsuccessful Login test', async ({ loginPage }) => {
     await loginPage.verifyErrorMessage('Epic sadface: Username and password do not match any user in this service');
