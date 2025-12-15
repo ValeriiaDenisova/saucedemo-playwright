@@ -9,6 +9,7 @@ test.describe("Conduit. Storage State Test Suite", () => {
         // await page.getByRole('textbox', { name: 'Password' }).fill("123456");
         // await page.getByRole('button', { name: 'Sign in' }).click();
 
-        await expect(page.getByText("A place to share your knowledge.")).toBeVisible();
+        await expect.soft(page.getByText("A place to share your knowledge.")).toBeVisible();
+
     });
 });

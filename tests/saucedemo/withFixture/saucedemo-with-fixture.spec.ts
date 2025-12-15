@@ -15,14 +15,13 @@ test.describe('Positive tests with Fixture', () => {
 
     await inventoryPage.addToCartByTitle('Sauce Labs Backpack');
     await inventoryPage.verifyNumberOfAddedItems(1);
-    ``
+
     await inventoryPage.clickCartButton();
     await inventoryPage.verifyNumberOfAddedItems(1);
   });
 
 
   test('TC-3 Checkout Process', async ({ inventoryPage, cartPage, checkoutStepOnePage, checkoutStepTwoPage }) => {
-
     await inventoryPage.verifyPriceByTitle('Sauce Labs Bike Light', '$9.99');
 
     await inventoryPage.addToCartByTitle('Sauce Labs Bike Light');
